@@ -1,0 +1,40 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                <div>
+                    <HeaderComponent></HeaderComponent>
+                </div>
+                <p>El contador esta a {{counter}}. Sigue pulsando!!!</p>
+                <button v-on:click="incrementCounter">Pulsame!!!</button>
+            </div>
+        </div>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script>
+            const HeaderComponent = {
+                template: `
+                    <h1> Hola <h1>
+                `
+            }
+            new Vue({
+                template: '#app',
+                data () {
+                    return {
+                        counter:0
+                    }
+                },
+                components: {
+                    HeaderComponent
+                },
+                methods: {
+                    incrementCounter(){
+                        this.counter ++;
+                    }
+                }
+            }).$mount('#app')
+        </script>
+    </body>
+</html>

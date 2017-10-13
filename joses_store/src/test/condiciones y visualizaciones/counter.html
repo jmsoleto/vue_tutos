@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                <p>Cosas que hay que hacer</p>
+                <ul>
+                    <li for="todo in todos">{{todo.text}}</li>
+                </ul>
+            </div>
+        </div>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                template: '#app',
+                data () {
+                    return {
+                        todos: [
+                            {id:1, text:'Recoger la cocina'},
+                            {id:2, text:'Hacer la compra'},
+                            {id:3, text:'Tender la ropa'}
+                        ]
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

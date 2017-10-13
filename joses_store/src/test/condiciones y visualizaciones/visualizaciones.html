@@ -1,0 +1,46 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                <button @click="toggleView">Pulsame y el texto de abajo aparecera ... o no</button>
+                <p v-show="isShown"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo similique quae cupiditate possimus, dolores cum, est eius magni, velit accusamus error quibusdam modi perspiciatis. Unde ab et fuga velit dolorum! </p>
+                <button @click="buttonPressed">Pulsando este boton eliminas del dom Cambias de la visualizacion a a la b</button>
+                <template v-if="isPressed">
+                    <div>
+                        <h4>Visualizacion B</h4>
+                        <p>Has pulsado el botón</p>
+                    </div>
+                </template>
+                <template else>
+                    <div>
+                        <h3>Visualizacion A</h3>
+                        <p>No has pulsado el botón</p>
+                    </div>
+                </template>            
+            </div>
+        </div>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script>
+            new Vue({
+                template: '#app',
+                data () {
+                    return {
+                        isShown:true,
+                        isPressed:false
+                    }
+                },
+                methods: {
+                    toggleView() {
+                       this.isShown = !this.isShown;
+                    },
+                    buttonPressed(){
+                        this.isPressed = !this.isPressed;
+                    }
+                }
+            }).$mount('#app')
+        </script>
+    </body>
+</html>

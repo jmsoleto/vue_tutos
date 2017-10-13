@@ -1,0 +1,40 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                <p>Hay diferentes tipos de interpolaciones</p>
+                <p>{{interpolation1}}</p>
+                <p v-text="interpolation2"></p>
+                <p v-bind:id="interpolation3">Interpolando el atributo de la capa</p>
+                <p :id="interpolation3" :title="interpolation4">Otra forma de interpolar un atributo (mas corta)</p>
+                <button v-on:click="alert1">Pulsame para mostrar una alerta</button>
+                <button @click="alert2">Enlace al click mas corto</button>
+            </div>
+        </div>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script>
+            new Vue({
+                template: '#app',
+                data () {
+                    return {
+                        interpolation1:'Interpolacion directa con llaves',
+                        interpolation2:'Interpolacion a traves de la directiva v-text',
+                        interpolation3:'capa1',
+                        interpolation4:'titulo interpolado'
+                    }
+                },
+                methods: {
+                    alert1() {
+                        alert('Bien pulsado');
+                    },
+                    alert2() {
+                        alert('Mejor pulsado')
+                    }
+                }
+            }).$mount('#app')
+        </script>
+    </body>
+</html>
