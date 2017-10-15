@@ -25,6 +25,14 @@
                         </li>
                     </div>
                 </ul>
+                <p v-bind:style="{color:'red', backgroundColor:'blue'}">Esta linea tiene un estilo enlazado</p>
+                <p :style="{'font-weight':'bold'}">Otro enlace</p>
+                <p :style="{'font-size':fontSize}">Otro enlace</p>
+                <p :style="estilazo">Y otro más</p>
+                <p :style="[estilazo,estilazo2]">Y el ultimo con dos estilos a la vez</p>
+                <div :class="{estilazo:active, estilazo2:inactive}">Este tiene una clase enlazada que cambia al darle al boton</div>
+                <button :click="cambiaClase">Pulsame!!!</button>
+
             </div>
         </div>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -38,12 +46,26 @@
                             {id: 1, label: 'Recoger la cocina'},
                             {id: 2, label: 'Hacer la compra'},
                             {id: 3, label: 'Tender la ropa'}
-                        ]
+                        ],
+                        fontSize: '24px',
+                        estilazo: {
+                            color: '#505050',
+                            fontWeight: 'bold',
+                            backgroundColor: 'lightGrey',
+                            lineHeight: '1.6',
+                            padding: '1rem'
+                        },
+                        estilazo2: {
+                            color: 'red'
+                        },
+                        active: true,
+                        inactive: false
                     }
                 },
-                styles: {
-                    #app{
-                        color: red;
+                methods: {
+                    cambiaClase() {
+                        this.active = !this.active;
+                        this.inactive = !this.inactive;
                     }
                 }
             })
