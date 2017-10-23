@@ -8,6 +8,7 @@ import Products from '@/pages/Products';
 import Edit from '@/pages/Edit';
 import New from '@/pages/New';
 import TestBinding from '@/pages/TestBinding';
+import Validate from '@/pages/Validate';
 
 Vue.use(Router);
 
@@ -32,6 +33,11 @@ export default new Router({
       path: '/test-binding',
       name: 'TestBinding',
       component: TestBinding,
+    },
+    {
+      path: '/validate',
+      name: 'Validate',
+      component: Validate,
     },
     {
       path: '/admin',
