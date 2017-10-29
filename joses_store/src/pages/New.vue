@@ -3,7 +3,7 @@
     <div class="title">
       <h1>{{message}}</h1>
       <template>
-        <product-form save-product="addProduct" :model="model" :manufaturers="manufacturers">
+        <product-form save-product="addProduct" :model="model" :manufacturers="manufacturers">
         </product-form>
       </template>
     </div>
