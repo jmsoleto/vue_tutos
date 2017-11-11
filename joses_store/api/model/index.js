@@ -1,6 +1,6 @@
-const mongoose = require('moongose');
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema,
-      model  = mongose.model.bind(mongoose),
+      model  = mongoose.model.bind(mongoose),
       ObjectId = mongoose.Schema.Types.ObjectId;
 
 
@@ -10,13 +10,15 @@ const productSchema = Schema({
   image: String,
   price: Number,
   description: String,
-  manufacturer: {type:ObjectId, ref: 'Manufaturer'}
+  manufacturer: {type:ObjectId, ref: 'Manufacturer'}
 });
 
 const manufacturerSchema = Schema({
   id: ObjectId,
-  name:String
+  name: String
 })
 
 const Product = model('Product', productSchema);
 const Manufacturer = model('Manufacturer', manufacturerSchema);
+
+module.exports = {Product, Manufacturer};

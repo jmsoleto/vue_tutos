@@ -19,16 +19,6 @@ export default {
     return {
       message: 'Bienvenido a la página de administracion',
       model: {},
-      manufacturers: [
-        {
-          _id: 'sam',
-          name: 'samsung',
-        },
-        {
-          _id: 'apple',
-          name: 'Apple',
-        },
-      ],
     };
   },
   methods: {
@@ -38,6 +28,11 @@ export default {
   },
   components: {
     'product-form': ProductForm,
+  },
+  computed: {
+    manufacturers() {
+      return this.$store.getters.allManufacturers;
+    },
   },
 };
 </script>

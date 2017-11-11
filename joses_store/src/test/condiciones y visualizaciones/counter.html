@@ -5,10 +5,8 @@
     <body>
         <div id="app">
             <div>
-                <p>Cosas que hay que hacer</p>
-                <ul>
-                    <li for="todo in todos">{{todo.text}}</li>
-                </ul>
+                <p>El contador esta a {{counter}}. Sigue pulsando!!!</p>
+                <button v-on:click="incrementCounter">Pulsame!!!</button>
             </div>
         </div>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -18,11 +16,12 @@
                 template: '#app',
                 data () {
                     return {
-                        todos: [
-                            {id:1, text:'Recoger la cocina'},
-                            {id:2, text:'Hacer la compra'},
-                            {id:3, text:'Tender la ropa'}
-                        ]
+                        counter:0
+                    }
+                },
+                methods: {
+                    incrementCounter(){
+                        this.counter ++;
                     }
                 }
             })

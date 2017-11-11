@@ -7,6 +7,7 @@
             <!-- Links are to sibling routes -->
             <li><router-link to="/admin">View Products</router-link></li>
             <li><router-link to="/admin/new">New Product</router-link></li>
+            <li><router-link to="/admin/new-manufacturer">New Manufacturer</router-link></li>
           </ul>
         </div>
         <!-- Outlet for children routes -->

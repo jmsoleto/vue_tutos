@@ -1,0 +1,34 @@
+{
+  // Use IntelliSense to learn about possible Node.js debug attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Iniciar programa",
+      "program": "${workspaceRoot}/joses_store/api",
+      "cwd": "${workspaceFolder}/joses_store/api",
+      "outFiles": []
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Asociar al puerto",
+      "address": "localhost",
+      "port": 5858
+    },
+    {
+    "name": "Launch via NPM",
+    "type": "node",
+    "request": "launch",
+    "cwd": "${workspaceRoot}/joses_store",
+    "runtimeExecutable": "npm",
+    "runtimeArgs": [
+        "run-script", "start"
+    ],
+    "port": 3000
+    }
+  ]
+}

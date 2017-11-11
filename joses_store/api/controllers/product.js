@@ -19,7 +19,7 @@ const productController = {
     const requestBody = req.body;
     const newProduct = new Product(requestBody);
     newProduct.save((err, saved) => {
-      Product.findOne({_id:_saved._id})
+      Product.findOne({_id:saved._id})
              .populate('manufacturer')
              .exec((err, product) => res.json(product));
     })
@@ -27,7 +27,7 @@ const productController = {
 
   update (req, res) {
     const idParam = req.params.id
-    let produc t= req.body;
+    let product= req.body;
     Product.findOne({_id:idParam}, (err, data) => {
       data.name = product.name;
       data.description = product.description;

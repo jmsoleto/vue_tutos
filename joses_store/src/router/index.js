@@ -7,6 +7,7 @@ import Index from '@/pages/Index';
 import Products from '@/pages/Products';
 import Edit from '@/pages/Edit';
 import New from '@/pages/New';
+import NewManufacturer from '@/pages/NewManufacturer';
 import TestBinding from '@/pages/TestBinding';
 import Validate from '@/pages/Validate';
 
@@ -48,6 +49,11 @@ export default new Router({
           path: 'new',
           name: 'New',
           component: New,
+        },
+        {
+          path: 'new-manufacturer',
+          name: 'NewManufacturer',
+          component: NewManufacturer,
         },
         {
           path: '',

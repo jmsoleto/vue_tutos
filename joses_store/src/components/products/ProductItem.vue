@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="product">
-      <router-link :to"'/details/'+product._id" class="product-link">
+      <router-link :to="{path:'/details/' + product._id}" class="product-link">
         <div class="product-image">
           <img class="image" :src="product.image"></img>
         </div>
         <div class="product-description">
           <div class="product-info">
-            <small>{{product.manufacturer.name}}</small>
+            <small>{{product.manufacturer}}</small>
             <h4>{{product.name}}</h4>
           </div>
           <div class="product-place _cart">
