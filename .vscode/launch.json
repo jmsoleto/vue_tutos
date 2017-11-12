@@ -7,7 +7,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Iniciar programa",
+      "name": "Iniciar Servidor tienda",
       "program": "${workspaceRoot}/joses_store/api",
       "cwd": "${workspaceFolder}/joses_store/api",
       "outFiles": []
@@ -29,6 +29,14 @@
         "run-script", "start"
     ],
     "port": 3000
+    },
+    {
+        "name": "Debug vue shop",
+        "type": "chrome",
+        "request": "launch",
+        "sourceMaps": true,
+        "url": "http://localhost:8080",
+        "webRoot": "${workspaceRoot}"
     }
   ]
 }

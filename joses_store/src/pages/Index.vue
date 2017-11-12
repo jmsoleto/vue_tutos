@@ -5,9 +5,9 @@
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
           <ul class="admin-menu">
             <!-- Links are to sibling routes -->
-            <li><router-link to="/admin">View Products</router-link></li>
-            <li><router-link to="/admin/new">New Product</router-link></li>
-            <li><router-link to="/admin/new-manufacturer">New Manufacturer</router-link></li>
+            <li class="link"><router-link to="/admin/all-products">View Products</router-link></li>
+            <li class="link"><router-link to="/admin/new-product">New Product</router-link></li>
+            <li class="link"><router-link to="/admin/new-manufacturer">New Manufacturer</router-link></li>
           </ul>
         </div>
         <!-- Outlet for children routes -->
@@ -26,3 +26,22 @@
     },
   };
 </script>
+<style>
+.link {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  padding: 0 1rem;
+  line-height:2;
+  color: #2c3e50;
+  list-style: none;
+}
+.link a{
+  color: inherit;
+  cursor: pointer;
+}
+link a:hover{
+  color: #2c3e80
+}
+</style>

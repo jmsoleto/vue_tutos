@@ -27,6 +27,11 @@
 <script>
   export default {
     name: 'NewManufacturer',
+    created() {
+      if (this.manufacturers.length === 0) {
+        this.$store.dispatch('allManufacturers');
+      }
+    },
     model: {},
     data() {
       return {

@@ -3,9 +3,9 @@
     <nav>
       <div class="container">
         <ul class="nav__left">
-          <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/admin">Admin</router-link></li>
-          <li><router-link to="/cart">Cart</router-link></li>
+          <li><router-link :to="{ path: '/' }" exact>Home</router-link></li>
+          <li><router-link :to="'/admin'" exact>Admin</router-link></li>
+          <li><router-link :to="'/cart'"exact>Cart</router-link></li>
         </ul>
       </div>
     </nav>

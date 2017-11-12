@@ -1,7 +1,7 @@
 <template> 
   <div>
     <div class="title">
-      <h1>{{message}}</h1>
+      <h1>BO QUE PASA</h1>
     </div>
   </div>
 </template>

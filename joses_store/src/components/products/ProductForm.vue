@@ -16,7 +16,7 @@
           <label for="manufacturer">Fabricante</label>
           <select name="manufacturer">              
           <template v-for="manufacturer in manufacturers">
-            <option :value="manufacturer_id" :selected="manufacturer_id == (model.manufacturer && modale.manufacturer._id)">{{manufacturer.name}}</option>
+            <option :value="manufacturer._id" :selected="manufacturer._id == (model.manufacturer && modale.manufacturer._id)">{{manufacturer.name}}</option>
           </template>
           </select>
           <span v-show="errors.has('manufacturer')">Este campo es necesario</span>

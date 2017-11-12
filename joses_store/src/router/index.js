@@ -10,10 +10,12 @@ import New from '@/pages/New';
 import NewManufacturer from '@/pages/NewManufacturer';
 import TestBinding from '@/pages/TestBinding';
 import Validate from '@/pages/Validate';
+import Details from '@/pages/Details';
 
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/hola',
@@ -41,12 +43,17 @@ export default new Router({
       component: Validate,
     },
     {
+      path: '/details/:id',
+      name: 'Details',
+      component: Details,
+    },
+    {
       path: '/admin',
       name: 'Admin',
       component: Index,
       children: [
         {
-          path: 'new',
+          path: 'new-product',
           name: 'New',
           component: New,
         },
@@ -56,7 +63,7 @@ export default new Router({
           component: NewManufacturer,
         },
         {
-          path: '',
+          path: 'all-products',
           name: 'Products',
           component: Products,
         },

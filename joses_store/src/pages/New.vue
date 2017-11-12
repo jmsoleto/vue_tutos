@@ -15,6 +15,11 @@ import ProductForm from '@/components/products/ProductForm';
 
 export default {
   name: 'New',
+  created() {
+    if (this.manufacturers.length === 0) {
+      this.$store.dispatch('allManufacturers');
+    }
+  },
   data() {
     return {
       message: 'Bienvenido a la página de administracion',

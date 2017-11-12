@@ -26,6 +26,7 @@ export const productActions = {
   },
   productById({ commit }, payload) {
     commit(PRODUCT_BY_ID);
+    console.log('EOEOEOEOE');
     axios.get(`${API_BASE}/products/${payload}`)
          .then(response => commit(PRODUCT_BY_ID_SUCCESS, response.data));
   },
