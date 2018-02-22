@@ -1,12 +1,13 @@
 <template>
   <div>
    <div v-for="element in APIData" :key=element.name>
-     {{element.name}}
+     <PTElement :ElementData="element"></PTElement>
    </div>
   </div>
 </template>
 
 <script>
+import PTElement from './PTElement';
 
 export default {
   name: 'ListElements',
@@ -15,7 +16,10 @@ export default {
 
     }
   },
-  props:['APIData']
+  props:['APIData'],
+  components: {
+    'PTElement': PTElement,
+  }
 }
 </script>
 

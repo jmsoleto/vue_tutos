@@ -1,8 +1,5 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
     <list-elements :APIData="getAPIData"></list-elements>
-  </div>
 </template>
 
 <script>
@@ -14,7 +11,6 @@ export default {
   name: 'Home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
   },
   computed: {
