@@ -8,6 +8,12 @@ const productController = {
            .exec((err, products) => res.json(products))
   },
 
+  nProducts (req, res){
+    Product.find()
+           .limit(PRODUCTS_PER_PAGE)
+           .skip(page*PRODUCTS_PER_PAGE)
+  },
+
   byId (req, res) {
     const idParam = req.params.id;
     Product.findOne({_id: idParam})
@@ -33,6 +39,7 @@ const productController = {
       data.description = product.description;
       data.image = product.image;
       data.manufacturer = product.manufacturer;
+      data.price = product.price;
       data.save((err, updated) => res.json(updated));
     })
   },

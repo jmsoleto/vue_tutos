@@ -13,14 +13,15 @@
 
   export default {
     name: 'product-list',
+    props: ['products-per-page'],
     created() {
       if (this.products.length === 0) {
-        this.$store.dispatch('allProducts');
+        this.$store.dispatch('nProducts', this.products-per-page);
       }
     },
     computed: {
       products() {
-        return this.$store.getters.allProducts;
+        return this.$store.getters.nProducts;
       },
     },
     components: {

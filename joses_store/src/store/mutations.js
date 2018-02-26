@@ -11,6 +11,8 @@ import {
   REMOVE_FROM_CART,
   ALL_PRODUCTS,
   ALL_PRODUCTS_SUCCESS,
+  N_PRODUCTS,
+  N_PRODUCTS_SUCCESS,
   ALL_MANUFACTURERS,
   ALL_MANUFACTURERS_SUCCESS,
   ADD_MANUFACTURER,
@@ -27,6 +29,13 @@ export const productMutations = {
   [ALL_PRODUCTS_SUCCESS](state, payload) {
     state.showLoader = false;
     state.products = payload;
+  },
+  [N_PRODUCTS](state) {
+    state.showMore = true;
+  },
+  [N_PRODUCTS_SUCCESS](state,payload) {
+    state.showMore = false;
+    state.products.push(payload);
   },
   [PRODUCT_BY_ID](state) {
     state.showLoader = true;

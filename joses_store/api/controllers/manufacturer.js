@@ -3,7 +3,7 @@ const {Product, Manufacturer} = Model;
 
 const manufacturerController = {
   all (req, res) {
-    Manufacturer.find({}).exe2c((err, manufacturers) => res.json(manufacturers))
+    Manufacturer.find({}).exec((err, manufacturers) => res.json(manufacturers))
   },
 
   add (req, res) {

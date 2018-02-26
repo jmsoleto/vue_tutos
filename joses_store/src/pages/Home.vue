@@ -3,7 +3,7 @@
         <div class="title">
             <h1>In Stock</h1>
         </div>
-        <product-list></product-list>
+        <product-list products-per-page=12></product-list>
     </div>
 </template>
 
