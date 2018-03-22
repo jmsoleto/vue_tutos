@@ -1,7 +1,10 @@
 <template>
   <div>
-   <div v-for="element in APIData" :key=element.name>
-     <PTElement :ElementData="element"></PTElement>
+  <h1>The great preidic table</h1>
+   <div class="table">
+    <template v-for="element in APIData">
+      <PTElement :ElementData="element" :key=element.name></PTElement>
+    </template>
    </div>
   </div>
 </template>
@@ -25,5 +28,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  .table{
+    display:grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(18, 100px);
+    grid-template-rows: repeat(9, 100px);
+  }
 </style>
