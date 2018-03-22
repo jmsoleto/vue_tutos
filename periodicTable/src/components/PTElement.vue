@@ -1,6 +1,6 @@
 <template>
-  <div :style="{backgroundColor: activeColor, gridRowStart: row}" 
-  
+  <div :style="{backgroundColor: activeColor, gridRowStart: row, gridColumnStart: column}"
+
   :class="{element:true}">
     <div class="element-number">{{ElementData.atomicNumber}}</div>
     <div class="element-mass">{{ElementData.atomicMass}}</div>
@@ -20,11 +20,16 @@ export default {
   },
   computed: {
     activeColor() {
-      return `#${this.ElementData.cpkHexColor}`;
+      return {'nonmetal': '#81F781',
+              'noble gas': '#C0FFFF',
+              'alkali metal':'#FF6666',
+              'alkaline earth metal': '#FFDEAD'}[this.ElementData.groupBlock];
     },
     row() {
-      var b = this.$props.ElementData.electronicConfiguration.split(' ')
-      return b[b.length -1].substr(0,1);
+      return this.$props.ElementData.period;
+    },
+    column() {
+      return this.$props.ElementData.group;
     }
   },
   props:['ElementData']
@@ -36,7 +41,7 @@ export default {
   .element{
     padding: 4px;
     display:grid;
-    grid-template-areas: 
+    grid-template-areas:
       "atomic   empty   valencies"
       "empty-2    symbol     empty-3"
       "empty-4    name     empty-5"
